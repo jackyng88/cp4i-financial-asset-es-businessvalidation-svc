@@ -4,6 +4,10 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
+## What this microservice does
+Currently this microservice acts as the fifth of the microservices. It will pull from the Kafka topic and deserializes the JSON into a Java object. The service will then validate if it's current flag is true and the previous is false. If true it changes it's business_validation boolean to false to signify that it's ready for consumption by the WebSocket service.
+
+
 ## Setting the environment variables prior to use
 
 Run the following command and replace the items in <> with your values prior to running the application. Note that the CERT_LOCATION environment variable is only necessary if you need to connect to an Event Streams instance on Cloud Pak for Integration for example.
