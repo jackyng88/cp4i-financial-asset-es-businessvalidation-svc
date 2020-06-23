@@ -30,15 +30,12 @@ public class BusinessValidation {
 
         LOGGER.info("Message received from topic = {}", receivedMessage);
 
-        if (receivedMessage.business_validation && !receivedMessage.schema_validation &&
-            !receivedMessage.trade_enrichment) {
+        if (receivedMessage.business_validation && !receivedMessage.trade_enrichment) {
             /*
-            Check whether technical_valiation is true as well as if compliance_services (previous) 
-            and schema_validation (next) are false. If so it's ready to be processed.
-            We flip the boolean value to indicate that this service has processed it and ready for the next step. 
+            Since Business Validation is the last service along the "conveyor belt" we just change
+            the boolean to false to indicate that it's finished.
             */
             receivedMessage.business_validation = false;
-            receivedMessage.trade_enrichment = true;
 
             return Flowable.just(receivedMessage);
         }
