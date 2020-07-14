@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.ibm.garage.cpat.cp4i.BusinessValidation.BusinessValidationTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.946 s <<< FAILURE! - in com.ibm.garage.cpat.cp4i.BusinessValidation.BusinessValidationTest
+testHelloEndpoint  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.RuntimeException: java.lang.RuntimeException: Failed to start quarkus
+Caused by: java.lang.RuntimeException: Failed to start quarkus
+Caused by: javax.enterprise.inject.spi.DeploymentException: java.util.NoSuchElementException: Cannot find attribute `ssl.truststore.location` for channel `pre-business-check`. Has been tried: mp.messaging.incoming.pre-business-check.ssl.truststore.location and mp.messaging.connector.smallrye-kafka.ssl.truststore.location
+Caused by: java.util.NoSuchElementException: Cannot find attribute `ssl.truststore.location` for channel `pre-business-check`. Has been tried: mp.messaging.incoming.pre-business-check.ssl.truststore.location and mp.messaging.connector.smallrye-kafka.ssl.truststore.location
+

@@ -1,7 +1,5 @@
 package com.ibm.garage.cpat.cp4i.FinancialMessage;
 
-import org.mvel2.util.Make.String;
-
 public class FinancialMessage {
     
     public String user_id;
