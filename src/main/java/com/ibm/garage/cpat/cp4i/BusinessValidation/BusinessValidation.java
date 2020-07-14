@@ -30,7 +30,9 @@ public class BusinessValidation {
 
         LOGGER.info("Message received from topic = {}", receivedMessage);
 
-        if (receivedMessage.business_validation && !receivedMessage.trade_enrichment) {
+        if (receivedMessage.business_validation && !receivedMessage.trade_enrichment &&
+            !receivedMessage.schema_validation && !receivedMessage.technical_validation &&
+            !receivedMessage.compliance_services) {
             /*
             Since Business Validation is the last service along the "conveyor belt" we just change
             the boolean to false to indicate that it's finished.
